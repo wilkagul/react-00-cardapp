@@ -1,6 +1,14 @@
-import { Card, Image, Text, Badge, Button, Group } from "@mantine/core";
+import {
+  Card,
+  CloseButton,
+  Image,
+  Text,
+  Badge,
+  Button,
+  Group,
+} from "@mantine/core";
 // Aşağıdaki arrow funtion ile oluşturduğumuz hal:
-const CardComponent = ({ title, par, lesson, index }) => (
+const CardComponent = ({ title, par, lesson, index, click }) => (
   <Card shadow="sm" p="lg" radius="md" withBorder>
     <Card.Section>
       <Image
@@ -15,6 +23,7 @@ const CardComponent = ({ title, par, lesson, index }) => (
       {/* <Badge color="pink" variant="light">
         On Sale
       </Badge> */}
+      <CloseButton aria-label="Close modal" onClick={click} />
     </Group>
 
     <Text size="sm" color="dimmed">
