@@ -11,44 +11,44 @@ import {
 import "./App.css";
 import Card from "./components/Card";
 import { useState } from "react";
-let arr = [
-  {
-    id: 1,
-    title: "Dağ 1",
-    par: "Açıklama 1",
-  },
-  {
-    id: 2,
-    title: "Dağ 2",
-    par: "Açıklama 2",
-  },
-  {
-    id: 3,
-    title: "Dağ 3",
-    par: "Açıklama 3",
-  },
-  {
-    id: 4,
-    title: "Dağ 4",
-    par: "Açıklama 4",
-  },
-];
+
+let mountain = {
+  name: "Mini tepe",
+};
+console.log(mountain.name);
 
 const App = () => {
   const [title, setTitle] = useState("");
   const [paragraf, setParagraf] = useState("");
-  const [list, setList] = useState(arr);
+  const [list, setList] = useState([
+    {
+      id: 1,
+      title: "Dağ 1",
+      par: "Açıklama 1",
+    },
+    {
+      id: 2,
+      title: "Dağ 2",
+      par: "Açıklama 2",
+    },
+    {
+      id: 3,
+      title: "Dağ 3",
+      par: "Açıklama 3",
+    },
+  ]);
   const [lesson, setLesson] = useState([]);
   const click = () => {
     setTitle("");
     setParagraf("");
-    const copyList = [...list];
-    copyList.push({
-      id: 5,
-      title, // =title: title,
-      par: paragraf,
-    });
-    setList(copyList);
+    setList([
+      ...list,
+      {
+        id: 5,
+        title, // =title: title,
+        par: paragraf,
+      },
+    ]);
   };
   return (
     <Container>
